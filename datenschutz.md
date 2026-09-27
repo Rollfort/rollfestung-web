@@ -33,14 +33,14 @@ E-Mail: rollfestung@gmail.com
 
 Das Spiel speichert auf deinem Gerät:
 
-- deinen Spielstand (Fortschritt, Ausrüstung, Kronen, Erfolge und die Nummern deiner Käufe),
+- deinen Spielstand (Fortschritt, Ausrüstung, Kronen, Erfolge und die Nummern deiner Käufe) mit einer Echtheits-Signatur (Abschnitt 8, „Schutz vor Manipulation“),
 - deine Einstellungen (Klang, Vibration, Grafik, Tutorial, Spielstatistik an oder aus),
-- Tageszähler für Belohnungs-Videos, damit das Tageslimit auch nach einem Neustart gilt,
-- die Anmeldung deines anonymen Spielkontos (verschlüsselt im iOS-Schlüsselbund) und Meldungen an den Spielserver, die noch nicht gesendet werden konnten, zum Beispiel ohne Internet.
+- Tageszähler für Belohnungs-Videos als Teil des Spielstands, damit das Tageslimit auch nach einem Neustart oder einer Neuinstallation gilt,
+- die Anmeldung deines anonymen Spielkontos und den Schlüssel der Echtheits-Signatur (beides verschlüsselt im iOS-Schlüsselbund) sowie Meldungen an den Spielserver, die noch nicht gesendet werden konnten, zum Beispiel ohne Internet.
 
 Für die Landesflagge im Spiel liest die App die Region-Einstellung deines Geräts (zum Beispiel „Deutschland“). Standortdaten (GPS) werden nicht verwendet. Den Ländercode (zum Beispiel „DE“) erhält auch der Spielserver – für die Flagge in der weltweiten Rangliste und die Länderstatistik (Abschnitt 8).
 
-Die Daten auf dem Gerät werden gelöscht, wenn du die App löschst. Nur die Anmeldung im Schlüsselbund kann iOS behalten – installierst du das Spiel neu, findest du so deinen Cloud-Spielstand wieder. Mit „Meine Serverdaten löschen“ entfernst du auch sie. Nutzt du ein iCloud-Backup deines Geräts, sichert Apple die Daten zusammen mit deinen anderen App-Daten. Die Speicherung ist für das Spiel und die Online-Funktionen, die du nutzt, unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG, Art. 6 Abs. 1 lit. b DSGVO); für noch nicht gesendete Statistik-Meldungen gilt Abschnitt 8.
+Die Daten auf dem Gerät werden gelöscht, wenn du die App löschst. Nur die Einträge im Schlüsselbund kann iOS behalten – installierst du das Spiel neu, findest du so deinen Cloud-Spielstand wieder. Mit „Meine Serverdaten löschen“ entfernst du die Anmeldung. Nutzt du ein iCloud-Backup deines Geräts, sichert Apple die Daten zusammen mit deinen anderen App-Daten. Die Speicherung ist für das Spiel und die Online-Funktionen, die du nutzt, unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG, Art. 6 Abs. 1 lit. b DSGVO); für noch nicht gesendete Statistik-Meldungen gilt Abschnitt 8.
 
 ## 4. iCloud: Spielstand auf deinen Geräten
 
@@ -76,7 +76,7 @@ An einigen Stellen kannst du freiwillig ein kurzes Werbevideo ansehen und dafür
 
 ## 8. Spielserver (Supabase)
 
-Für den Cloud-Spielstand, die weltweite Rangliste und eine anonyme Spielstatistik verbindet sich das Spiel mit meinem eigenen Spielserver. Ohne Internetverbindung spielst du ganz normal weiter; was offline anfällt, sendet das Spiel später.
+Für den Cloud-Spielstand, die weltweite Rangliste und eine anonyme Spielstatistik verbindet sich das Spiel mit meinem eigenen Spielserver. Zum Start braucht das Spiel eine Internetverbindung (siehe „Schutz vor Manipulation“). Verlierst du sie danach, spielst du ganz normal weiter; was offline anfällt, sendet das Spiel später.
 
 **Anbieter und Serverstandort:** Den Spielserver betreibt für mich Supabase (Supabase Pte. Ltd., Singapur) als Auftragsverarbeiter nach Art. 28 DSGVO; mit Supabase besteht ein Vertrag zur Auftragsverarbeitung (Data Processing Addendum). Die Datenbank liegt in der EU, in einem Rechenzentrum von Amazon Web Services in Frankfurt am Main (Region eu-central-1). Greifen Supabase oder seine Unterauftragnehmer für Betrieb, Wartung oder Support aus Ländern außerhalb der EU auf Daten zu (zum Beispiel aus Singapur oder den USA), gelten dafür die Standardvertragsklauseln der EU-Kommission (Art. 46 Abs. 2 lit. c DSGVO).
 
@@ -90,8 +90,11 @@ Für den Cloud-Spielstand, die weltweite Rangliste und eine anonyme Spielstatist
 - **Ereignisse** (wenn sie passieren): Belohnungs-Video angesehen oder abgebrochen (mit der Stelle im Spiel), Kauf (Produkt, Preis und Währung – statt der Transaktionsnummer nur ein nicht umkehrbarer Kurz-Code), Kiste geöffnet, Freischaltung, Prestige und Erfolg, jeweils mit App-Version und Zeitpunkt.
 - **Cloud-Spielstand** (nach dem Speichern, höchstens alle 30 Sekunden): eine Kopie deines Spielstands mit demselben Inhalt wie auf deinem Gerät (Abschnitt 3), also auch den Nummern deiner Käufe.
 - **Rangliste** (nach jedem Feldzug): beste Zone, bester Punktestand, Prestige-Stufe, Land und dein Anzeigename, beim Tagesfeldzug auch Punkte und Zone des Tages. Anzeigename ist dein Game-Center-Name, wenn du bei Game Center angemeldet bist, sonst „Burgherr“. Im Profil kannst du ihn genau einmal durch einen selbst gewählten Namen ersetzen – nimm dafür nicht deinen echten Namen. Namen mit Beleidigungen oder rassistischen Begriffen lässt der Server nicht zu.
+- **Meldungen** (wenn du einen Namen in der Rangliste meldest): deine Konto-ID, die Konto-ID des gemeldeten Spielers, der gemeldete Name, der Grund und der Zeitpunkt – nur für die Moderation und nur für mich sichtbar. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (eine faire Rangliste ohne beleidigende Namen). „Meine Serverdaten löschen“ löscht auch deine Meldungen und die Meldungen über dich.
 
 E-Mail-Adresse, Werbe-ID (IDFA) und Standortdaten sendet das Spiel nicht an den Spielserver, deinen Namen nur als Anzeigenamen für die Rangliste (siehe oben).
+
+**Schutz vor Manipulation:** Damit Belohnungen und Ranglisten fair bleiben, rechnet das Spiel alles, was es einmal am Tag gibt (Login-Belohnung, Aufträge, Battle Pass, Belohnungs-Videos), mit der Serverzeit des Spielservers statt mit der Uhr deines Geräts. Deshalb braucht das Spiel zum Start eine Internetverbindung. Es vergleicht die Uhr deines Geräts mit der Serverzeit und prüft die Echtheits-Signatur deines Spielstands (ein Prüfwert mit einem zufälligen Schlüssel, der nur in deinem iOS-Schlüsselbund liegt). Weicht die Uhr um mehr als 5 Minuten ab oder passt die Signatur nicht, meldet das Spiel das an den Spielserver: bei der Uhr die Abweichung in Sekunden, bei der Signatur nur den Grund (zum Beispiel „verändert“), jeweils mit App-Version und Zeitpunkt. Das Spiel selbst löscht, ändert oder sperrt deswegen nichts; auffällige Konten prüfe ich von Hand und nehme sie nur bei eindeutiger Manipulation aus der Rangliste. Diese Meldungen sendet das Spiel auch, wenn die Spielstatistik ausgeschaltet ist.
 
 **Wer die Daten sieht:** Die Ranglisten sehen alle Spieler – mit Platz, dem Anzeigenamen (Game-Center-Name oder dein selbst gewählter Name, sonst „Burgherr“), einer Kurz-ID aus deiner Konto-ID (zum Beispiel #3F9A1C), der Flagge deines Landes, bester Zone, Punkten und Prestige-Stufe. Alle anderen Daten sehe nur ich; Supabase verarbeitet sie ausschließlich in meinem Auftrag. Ich verkaufe keine Daten und nutze sie nicht für Werbung.
 
@@ -99,7 +102,8 @@ E-Mail-Adresse, Werbe-ID (IDFA) und Standortdaten sendet das Spiel nicht an den 
 
 - Cloud-Spielstand und Ranglisten, damit dein Fortschritt gesichert ist und du dich mit anderen messen kannst: Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der Spielfunktionen, die du nutzt).
 - Spielstatistik (Gerät und App, Online-Status, Feldzüge, Ereignisse), um zu sehen, wie das Spiel gespielt wird, Fehler und Balancing-Probleme zu finden und das Spiel zu verbessern: nur mit deiner Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG). Das Spiel fragt dich einmal danach; bis zu deiner Antwort und bei „Nicht erlauben“ wird keine Statistik gesendet. Die Statistik ist pseudonym und enthält weder Name noch E-Mail, Werbe-ID oder Standortdaten. Du kannst die Einwilligung jederzeit widerrufen: Schalte in den Einstellungen unter „Online & Datenschutz“ den Schalter „Anonyme Spielstatistik senden“ aus. Dann sendet die App keinen Online-Status, keine Geräte- und Feldzugsdaten und keine Ereignisse mehr; Cloud-Spielstand und Rangliste bleiben.
-- Die Anmeldung im Schlüsselbund ist technisch unbedingt erforderlich, damit Cloud-Spielstand und Ranglisten-Eintrag dir zugeordnet bleiben (§ 25 Abs. 2 Nr. 2 TDDDG).
+- Schutz vor Manipulation (Vergleich von Geräte-Uhr und Serverzeit, Prüfung der Echtheits-Signatur und die Meldung von Abweichungen, siehe oben), damit Belohnungen und Ranglisten für alle fair bleiben: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse, Manipulationen zu verhindern). Du kannst dem aus Gründen, die sich aus deiner besonderen Situation ergeben, widersprechen (Art. 21 DSGVO); schreib mir dafür (Abschnitt 10).
+- Die Anmeldung im Schlüsselbund ist technisch unbedingt erforderlich, damit Cloud-Spielstand und Ranglisten-Eintrag dir zugeordnet bleiben (§ 25 Abs. 2 Nr. 2 TDDDG). Dasselbe gilt für den Schlüssel der Echtheits-Signatur, der den Spielstand vor Manipulation schützt.
 - Die IP-Adresse verarbeitet Supabase für die Verbindung und den sicheren Betrieb des Servers (Art. 6 Abs. 1 lit. f DSGVO).
 
 **Speicherdauer:** Ich speichere die Daten, solange dein Spielkonto besteht. Vom Online-Status bleiben nur der letzte Stand und je Tag die Zahl der gespielten Minuten. Einzelne Feldzüge, Ereignisse und Tageswerte lösche ich spätestens nach 24 Monaten, Konten, mit denen 24 Monate lang nicht gespielt wurde, samt allen Daten. IP-Adressen in den Server- und Anmeldeprotokollen werden nach spätestens 30 Tagen gelöscht. Gelöschte Daten können noch bis zu 30 Tage in Sicherungskopien (Backups) von Supabase enthalten sein.
@@ -202,14 +206,14 @@ Email: rollfestung@gmail.com
 
 The game stores on your device:
 
-- your game progress (progression, gear, crowns, achievements and the IDs of your purchases),
+- your game progress (progression, gear, crowns, achievements and the IDs of your purchases) with an integrity signature (section 8, "Protection against manipulation"),
 - your settings (sound, haptics, graphics, tutorial, game statistics on or off),
-- daily counters for reward videos, so the daily limit still applies after a restart,
-- the sign-in of your anonymous game account (encrypted in the iOS keychain) and messages to the game server that could not be sent yet, for example without internet.
+- daily counters for reward videos as part of your game progress, so the daily limit still applies after a restart or a reinstall,
+- the sign-in of your anonymous game account and the key of the integrity signature (both encrypted in the iOS keychain) as well as messages to the game server that could not be sent yet, for example without internet.
 
 To show your country's flag in the game, the app reads your device's region setting (for example "Germany"). No location data (GPS) is used. The game server also receives the country code (for example "DE") – for the flag on the worldwide leaderboard and the country statistics (section 8).
 
-The data on your device is deleted when you delete the app. Only the sign-in in the keychain may be kept by iOS – if you reinstall the game, this is how you get your cloud save back. "Delete my server data" removes it as well. If you use an iCloud backup of your device, Apple backs up the data together with your other app data. Storing this data is strictly necessary for the game and the online features you use (Section 25 (2) no. 2 TDDDG, Art. 6 (1) (b) GDPR); for statistics messages that have not been sent yet, section 8 applies.
+The data on your device is deleted when you delete the app. Only the entries in the keychain may be kept by iOS – if you reinstall the game, this is how you get your cloud save back. "Delete my server data" removes the sign-in. If you use an iCloud backup of your device, Apple backs up the data together with your other app data. Storing this data is strictly necessary for the game and the online features you use (Section 25 (2) no. 2 TDDDG, Art. 6 (1) (b) GDPR); for statistics messages that have not been sent yet, section 8 applies.
 
 ## 4. iCloud: your progress on all your devices
 
@@ -245,7 +249,7 @@ In some places you can choose to watch a short video ad and get a reward (daily 
 
 ## 8. Game server (Supabase)
 
-For the cloud save, the worldwide leaderboard and anonymous game statistics, the game connects to my own game server. Without an internet connection you keep playing as usual; whatever happens offline is sent later.
+For the cloud save, the worldwide leaderboard and anonymous game statistics, the game connects to my own game server. The game needs an internet connection to start (see "Protection against manipulation"). If you lose it afterwards, you keep playing as usual; whatever happens offline is sent later.
 
 **Provider and server location:** Supabase (Supabase Pte. Ltd., Singapore) runs the game server for me as a processor under Art. 28 GDPR; a data processing agreement (Data Processing Addendum) is in place with Supabase. The database is located in the EU, in an Amazon Web Services data center in Frankfurt am Main, Germany (region eu-central-1). If Supabase or its subprocessors access data from countries outside the EU for operation, maintenance or support (for example from Singapore or the USA), the European Commission's standard contractual clauses apply (Art. 46 (2) (c) GDPR).
 
@@ -259,8 +263,11 @@ For the cloud save, the worldwide leaderboard and anonymous game statistics, the
 - **Events** (when they happen): reward video watched or aborted (with the place in the game), purchase (product, price and currency – instead of the transaction ID only an irreversible short code), chest opened, unlock, prestige and achievement, each with app version and time.
 - **Cloud save** (after saving, at most every 30 seconds): a copy of your game progress with the same content as on your device (section 3), including the IDs of your purchases.
 - **Leaderboard** (after every campaign): best zone, best score, prestige level, country and your display name, for the daily campaign also the day's score and zone. The display name is your Game Center name if you are signed in to Game Center, otherwise "Burgherr" / "Castellan". In your profile you can replace it exactly once with a name of your choice – don't use your real name. The server does not accept names containing insults or racist terms.
+- **Reports** (when you report a name on the leaderboard): your account ID, the reported player's account ID, the reported name, the reason and the time — used only for moderation and visible only to me. The legal basis is Art. 6 (1) (f) GDPR (a fair leaderboard without offensive names). "Delete my server data" also deletes your reports and the reports about you.
 
 The game does not send your email address, advertising identifier (IDFA) or location data to the game server, and it sends your name only as the leaderboard display name (see above).
+
+**Protection against manipulation:** To keep rewards and leaderboards fair, the game bases everything it gives out once a day (login reward, missions, Battle Pass, reward videos) on the game server's time instead of your device's clock. That is why the game needs an internet connection to start. It compares your device's clock with the server time and checks the integrity signature of your game progress (a check value made with a random key that is stored only in your iOS keychain). If the clock is off by more than 5 minutes or the signature does not match, the game reports this to the game server: for the clock, the difference in seconds; for the signature, only the reason (for example "modified"), each with app version and time. The game itself does not delete, change or block anything because of this; I review conspicuous accounts by hand and only remove them from the leaderboard in clear cases of manipulation. The game sends these reports even if game statistics are turned off.
 
 **Who sees the data:** All players see the leaderboards – with rank, the display name (Game Center name or the name you chose, otherwise "Burgherr" / "Castellan"), a short ID derived from your account ID (for example #3F9A1C), your country's flag, best zone, score and prestige level. Only I see all other data; Supabase processes it solely on my behalf. I do not sell any data and do not use it for advertising.
 
@@ -268,7 +275,8 @@ The game does not send your email address, advertising identifier (IDFA) or loca
 
 - Cloud save and leaderboards, so your progress is backed up and you can compete with others: Art. 6 (1) (b) GDPR (providing the game features you use).
 - Game statistics (device and app, online status, campaigns, events), to see how the game is played, find bugs and balancing problems and improve the game: only with your consent (Art. 6 (1) (a) GDPR, § 25 (1) TDDDG). The game asks you once; until you answer, and if you choose "Don't allow", no statistics are sent. The statistics are pseudonymous and contain no name, email, advertising identifier or location data. You can withdraw your consent at any time: in the settings under "Online & Privacy", turn off "Send anonymous game statistics". The app then no longer sends online status, device and campaign data or events; cloud save and leaderboard remain.
-- The sign-in in the keychain is technically strictly necessary so that your cloud save and leaderboard entry stay assigned to you (Section 25 (2) no. 2 TDDDG).
+- Protection against manipulation (comparing the device clock with the server time, checking the integrity signature and reporting deviations, see above), so rewards and leaderboards stay fair for everyone: Art. 6 (1) (f) GDPR (legitimate interest in preventing manipulation). You can object to this on grounds relating to your particular situation (Art. 21 GDPR); just write to me (section 10).
+- The sign-in in the keychain is technically strictly necessary so that your cloud save and leaderboard entry stay assigned to you (Section 25 (2) no. 2 TDDDG). The same applies to the key of the integrity signature, which protects your game progress against manipulation.
 - Supabase processes the IP address to establish the connection and to operate the server securely (Art. 6 (1) (f) GDPR).
 
 **Retention:** I keep the data as long as your game account exists. Of the online status, only the latest state and the number of minutes played per day are kept. I delete individual campaigns, events and daily results after 24 months at the latest, and accounts that have not been played with for 24 months together with all their data. IP addresses in the server and sign-in logs are deleted after 30 days at the latest. Deleted data may remain in Supabase's backups for up to 30 days.

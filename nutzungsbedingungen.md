@@ -8,7 +8,7 @@
 
 # Nutzungsbedingungen
 
-Stand: 24.09.2026
+Stand: 25.09.2026
 
 Diese Bedingungen gelten für das Spiel „Rollfort“ von Jannik Willer (Kontakt siehe Impressum).
 
@@ -45,7 +45,7 @@ Ich entwickle das Spiel weiter. Updates können Werte und Balancing ändern, neu
 
 ## 7. Verfügbarkeit
 
-Game Center, iCloud und der App Store sind Dienste von Apple, auf deren Verfügbarkeit ich keinen Einfluss habe. Das Spiel ist ohne Internetverbindung spielbar; Käufe, Bestenlisten und der Abgleich über iCloud brauchen eine Verbindung.
+Game Center, iCloud und der App Store sind Dienste von Apple, auf deren Verfügbarkeit ich keinen Einfluss habe. Zum Start braucht das Spiel eine Internetverbindung und eine Antwort des Spielservers (damit Tagesbelohnungen fair bleiben); danach ist es auch ohne Internetverbindung spielbar. Käufe, Bestenlisten und der Abgleich über iCloud brauchen eine Verbindung.
 
 ## 8. Haftung
 
@@ -65,7 +65,7 @@ Es gilt deutsches Recht. Bist du Verbraucher und lebst in einem anderen Staat, b
 
 # Terms of Use
 
-Last updated: September 24, 2026
+Last updated: September 25, 2026
 
 These terms apply to the game "Rollfort" by Jannik Willer (contact details in the Legal Notice). This English version is a translation; if the versions differ, the German version prevails.
 
@@ -102,7 +102,7 @@ I keep developing the game. Updates may change values and balancing, add content
 
 ## 7. Availability
 
-Game Center, iCloud and the App Store are Apple services whose availability I cannot control. The game can be played offline; purchases, leaderboards and iCloud sync need a connection.
+Game Center, iCloud and the App Store are Apple services whose availability I cannot control. To start, the game needs an internet connection and a response from the game server (so daily rewards stay fair); after that it can be played offline. Purchases, leaderboards and iCloud sync need a connection.
 
 ## 8. Liability
 
